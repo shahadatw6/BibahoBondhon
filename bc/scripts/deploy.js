@@ -23,29 +23,24 @@ async function main() {
     }
 
     // Example interaction: Get the certificate count (this will fail if no certificates have been created)
-    // try {
-    //     const certificateCount = await bibahoBondhon.certificateCount();
-    //     console.log(`Certificate count: ${certificateCount}`);
-    // } catch (error) {
-    //     console.error("Error fetching certificate count:", error);
-    // }
+
 }
 
-// async function verify(contractAddress, args) {
-//     console.log("Verifying contract...");
-//     try {
-//         await run("verify:verify", {
-//             address: contractAddress,
-//             constructorArguments: args,
-//         });
-//     } catch (e) {
-//         if (e.message.toLowerCase().includes("already verified")) {
-//             console.log("Already verified");
-//         } else {
-//             console.log(e);
-//         }
-//     }
-// }
+async function verify(contractAddress, args) {
+    console.log("Verifying contract...");
+    try {
+        await run("verify:verify", {
+            address: contractAddress,
+            constructorArguments: args,
+        });
+    } catch (e) {
+        if (e.message.toLowerCase().includes("already verified")) {
+            console.log("Already verified");
+        } else {
+            console.log(e);
+        }
+    }
+}
 
 main()
     .then(() => process.exit(0))

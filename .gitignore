@@ -1,4 +1,15 @@
+# Node modules
+node_modules/
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Hardhat files
 .env
-artifacts
-cache
-node_modules
+artifacts/
+cache/
+
+# React build files
+client/build/
